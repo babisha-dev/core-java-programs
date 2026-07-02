@@ -1,9 +1,9 @@
-package MultiThreading;
+package MultiThreading.RaceConditions;
 
 class Counter{
     int count=0;
-    void increment(){
-         count++;
+   synchronized void increment(){  // since it is not synchronized the result can be incorrect(99432,98356)
+         count++;      // if synchronized keyword is used in this method then 10000.
     }
 }
 class Count extends Thread{

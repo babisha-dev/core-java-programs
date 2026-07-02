@@ -1,4 +1,4 @@
-package MultiThreading;
+package MultiThreading.CreatingThread;
 class CustomThread extends Thread{
   public void run(){
     System.out.println(Thread.currentThread().getName());
@@ -12,7 +12,7 @@ class CustomThread extends Thread{
     }
   }
 }
-public class CreateThreas {
+public class CreateUsingThreadClass {
   public static void main(String[] args) {
     CustomThread thread=new CustomThread();
     thread.setName("Dummy");

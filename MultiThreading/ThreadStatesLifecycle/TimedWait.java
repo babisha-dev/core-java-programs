@@ -1,4 +1,4 @@
-package MultiThreading;
+package MultiThreading.ThreadStatesLifecycle;
 
 class Mythread extends Thread {
 public void run(){

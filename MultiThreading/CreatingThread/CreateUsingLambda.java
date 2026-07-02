@@ -1,4 +1,4 @@
-package MultiThreading;
+package MultiThreading.CreatingThread;
  class CreateThreadLamda{
     public static void main(String[] args) {
         Runnable lambda = () ->{
