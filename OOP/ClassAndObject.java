@@ -2,7 +2,7 @@ package OOP;
 import java.util.Scanner;
 
 
-public class OopTest {
+public class ClassAndObject {
 
     public static double toFahrenheit(double c)
 {
