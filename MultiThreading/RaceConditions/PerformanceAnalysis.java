@@ -51,7 +51,15 @@ class Printer {
 public class PerformanceAnalysis  {
    
     public static void main(String[] args) throws InterruptedException {
-        Printer print=new Printer();
+
+        Printer print1=new Printer();
+        Printer print2=new Printer();
+       Thread t1=new Thread(new PrintTask(print1),"t1");
+       Thread t2=new Thread(new PrintTask(print1),"t2");
+       t1.start();
+       t2.start();
+
+      /*   Printer print=new Printer();
         Thread[] thread=new Thread[3];
         long start=System.currentTimeMillis();
 
@@ -71,8 +79,14 @@ public class PerformanceAnalysis  {
         }
          long end=System.currentTimeMillis();
 
-                    System.out.println(end-start);
+                    System.out.println(end-start);*/
 
     }
     
 }
+
+/// If we have two synchronized method , the methods should not run parallely, should execute one after the other.
+/// the print should execute first completely then after the colorprint must start
+/// we are using two separate classes to demonstrate it.
+/// join() is important after creating threads , if not used the blocks execute paralley coz before complete first thread execution the next thread starts w/o join.
+/// 
