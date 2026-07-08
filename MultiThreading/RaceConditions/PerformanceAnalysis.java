@@ -52,14 +52,14 @@ public class PerformanceAnalysis  {
    
     public static void main(String[] args) throws InterruptedException {
 
-        Printer print1=new Printer();
+      /*   Printer print1=new Printer();
         Printer print2=new Printer();
        Thread t1=new Thread(new PrintTask(print1),"t1");
-       Thread t2=new Thread(new PrintTask(print1),"t2");
+       Thread t2=new Thread(new PrintTask(print2),"t2");   //If Print1 is given(i.e same lock) thread blocks the other t1 executes completely then only t2 starts execution , but here t1, t2 execute together.
        t1.start();
-       t2.start();
+       t2.start();*/
 
-      /*   Printer print=new Printer();
+         Printer print=new Printer();
         Thread[] thread=new Thread[3];
         long start=System.currentTimeMillis();
 
@@ -79,7 +79,7 @@ public class PerformanceAnalysis  {
         }
          long end=System.currentTimeMillis();
 
-                    System.out.println(end-start);*/
+                    System.out.println(end-start);
 
     }
     
