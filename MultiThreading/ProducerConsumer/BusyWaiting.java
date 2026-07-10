@@ -5,19 +5,27 @@ class Buffer{
        boolean full;
    synchronized public void produce(int val){
             while(full){
-
+                try{
+              wait();
+                System.out.println("Out of wait");}
+                catch(Exception e){}
             }
              numbers=val;
              full=true;
+             notify();
           System.out.println("Produces:"+numbers+" by "+Thread.currentThread().getName());
          
     }
    synchronized public void consumer(){
-    while(!full){}
+    while(!full){
+        try{
+        wait();
+        System.out.println("Notified waiting thread");}
+        catch(Exception e){}}
     int val=numbers;
     full=false;
     System.out.println("Consumes:"+val+" by "+Thread.currentThread().getName());
-
+    notify();
     }
 }
 class Producer implements Runnable{
