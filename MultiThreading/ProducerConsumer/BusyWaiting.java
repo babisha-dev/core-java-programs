@@ -12,7 +12,7 @@ class Buffer{
             }
              numbers=val;
              full=true;
-             notify();
+             notifyAll();
           System.out.println("Produces:"+numbers+" by "+Thread.currentThread().getName());
          
     }
@@ -25,7 +25,7 @@ class Buffer{
     int val=numbers;
     full=false;
     System.out.println("Consumes:"+val+" by "+Thread.currentThread().getName());
-    notify();
+    notifyAll();
     }
 }
 class Producer implements Runnable{
@@ -59,18 +59,20 @@ public class BusyWaiting {
     public static void main(String[] args) throws InterruptedException{
         Buffer buffer=new Buffer();
         Thread t1=new Thread(new Producer(buffer));
-                //Thread t2=new Thread(new Producer(buffer));
+                Thread t2=new Thread(new Producer(buffer));
                         Thread t3=new Thread(new Consumer(buffer));
 
-                                //Thread t4=new Thread(new Consumer(buffer));
+                                Thread t4=new Thread(new Consumer(buffer));
         t1.start();
-        //t2.start();
+        t2.start();
         t3.start();
-       // t4.start();
+        t4.start();
 
 
         t3.join();
         t1.join();
+        t2.join();
+        t4.join();
     }
     
 }
