@@ -11,7 +11,7 @@ class Buffer{
             while(buffer.size()==5){
                 try{
               wait();
-                System.out.println("Out of wait");}
+                System.out.println("Producer resumed");}
                 catch(Exception e){}
             }
              buffer.add(val);
@@ -19,6 +19,7 @@ class Buffer{
              //full=true;
              notifyAll();
           System.out.println("Produces:"+val+" by "+Thread.currentThread().getName());
+          System.out.println(buffer);
          
     }
    synchronized public void consumer(){
@@ -26,12 +27,14 @@ class Buffer{
     while(buffer.isEmpty()){
         try{
         wait();
-        System.out.println("Notified waiting thread");}
+        System.out.println("Consumer resumed");}
         catch(Exception e){}}
     int val=buffer.remove();
    // int val=numbers;
    // full=false;
     System.out.println("Consumes:"+val+" by "+Thread.currentThread().getName());
+    System.out.println(buffer);
+
     notifyAll();
     }
 }
