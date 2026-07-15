@@ -1,17 +1,22 @@
 package MultiThreading.LockAPi;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.*;;
 class Printer12{
 final private ReentrantLock lock=new ReentrantLock();
 public void print(){
-if(lock.tryLock()){
+try{
+if(lock.tryLock(10,TimeUnit.SECONDS)){
 try{
 System.out.println("prints value");
+Thread.sleep(5000);
+
 } finally{
 lock.unlock();
 }}
 else{
-    System.out.println("Printer Busy");
-}
+    System.out.println("Printer Busy Timeout");
+}}
+catch(Exception e){}
 }
 }
 class Worker12 extends Thread{
@@ -20,7 +25,7 @@ Printer12 printer;
         this.printer=printer;
     }
     public void run(){
-      for(int i=0;i<5;i++){
+      for(int i=0;i<3;i++){
         printer.print();
       }
     }
