@@ -9,7 +9,6 @@ private int count=0;
 final private ReentrantLock lock=new ReentrantLock();
 public void increment(){
 
-lock.lock();
 //try{
 count++;
 //} finally{
@@ -36,7 +35,7 @@ public class CounterDemo {
     public static void main(String[] args) throws InterruptedException {
         Counter counter =new Counter();
         Worker2 work1=new Worker2( counter);
-        Worker2 work2=new Worker2( counter);
+       Worker2 work2=new Worker2( counter);
 
         work1.start();
         work2.start();
