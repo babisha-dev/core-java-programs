@@ -2,12 +2,12 @@ package MultiThreading.LockAPi;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.*;;
 class Printer12{
-final private ReentrantLock lock=new ReentrantLock();
+final private ReentrantLock lock=new ReentrantLock(true);
 public void print(){
 try{
 if(lock.tryLock(10,TimeUnit.SECONDS)){
 try{
-System.out.println("prints value");
+System.out.println("prints value " +Thread.currentThread().getName());
 Thread.sleep(5000);
 
 } finally{
