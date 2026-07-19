@@ -129,7 +129,7 @@ JAVA
 
 ---
 
-# 🛠 Technologies
+# Technologies
 
 - Java 21
 - IntelliJ IDEA
