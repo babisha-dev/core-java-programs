@@ -12,18 +12,45 @@ class Userk1 extends Thread{
         this.segment=segment;
      }
     public void run(){
-       for(int i=1;i<=1000;i++){
+         
+         try{
+       for(int i=1;i<=100;i++){
         segment.add(i);
+         Thread.sleep(10); 
        }
-       System.out.println(segment.size()+" " + Thread.currentThread().getName());
+       System.out.println("Added"+segment.size()+" " + Thread.currentThread().getName());
     }
+    catch(Exception e){
+
+    }
+}
+
+}
+class Userk2 extends Thread{
+   
+    ArrayList<Integer> segment;
+     public Userk2(ArrayList<Integer> segment){
+        this.segment=segment;
+     }
+    public void run(){
+        try{
+        while(true){
+            for(Integer val:segment){
+                 int temp=val;
+            }
+            Thread.sleep(20);
+       System.out.println(segment.size()+" " + Thread.currentThread().getName());
+        }}
+        catch(Exception e){
+        e.printStackTrace();
+    }}
 
 }
 public class CopyonWriteArrayList {
     public static void main(String[] args) throws InterruptedException{
         ArrayList<Integer> segment =new ArrayList<>();
         Userk1 userk1=new Userk1(segment);
-        Userk1 userk2=new Userk1(segment);
+        Userk2 userk2=new Userk2(segment);
 
         userk1.start();
         userk2.start();
