@@ -37,12 +37,12 @@ class Userk2 extends Thread{
      }
     public void run(){
         try{
-            while (running) {
+            while (running) {   // this never throws error regarding InterrupteException.
        // while(!Thread.currentThread().isInterrupted()){ // using interruption so the user2 never fall in infinite loop like using true.
              //while(true){
         
             for(Integer val:segment){  // looping thread
-                 int temp=val;
+                 System.out.println(val +Thread.currentThread().getName());
             }
             Thread.sleep(20);
         }
@@ -50,7 +50,7 @@ class Userk2 extends Thread{
 }
         catch (InterruptedException e) {
             // Fix: Log a clean termination message instead of e.printStackTrace()
-                   System.out.println(segment.size()+" is the size from  " + Thread.currentThread().getName());
+    //  System.out.println(segment.size()+" is the size from  " + Thread.currentThread().getName());  // if u use interrupt then interruption exception occurs so use this in catch block so it will print, but if u use volatile flag then this is not necessary.
 
             System.out.println(Thread.currentThread().getName() + " received shutdown signal while sleeping. Exiting gracefully.");
         }
