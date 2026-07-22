@@ -1,9 +1,12 @@
 package MultiThreading.LockAPi;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class SharedMap{
-    HashMap<Integer,String> map=new HashMap<>();
+    ConcurrentHashMap<Integer,String> map=new ConcurrentHashMap<>();
+    AtomicInteger key=new AtomicInteger();
 }
 class UserD extends Thread{
     SharedMap sharedmap;
@@ -13,7 +16,8 @@ class UserD extends Thread{
     public void run(){
         try{
        for(int i=1;i<=1000;i++){
-        sharedmap.map.put(i,"User"+i);
+        int uniqkey=sharedmap.key.getAndIncrement();
+        sharedmap.map.put(uniqkey,"User"+i);
         Thread.sleep(1);
        }}
        catch(Exception e){
