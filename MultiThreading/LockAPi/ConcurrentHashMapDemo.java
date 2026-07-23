@@ -1,13 +1,13 @@
 package MultiThreading.LockAPi;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class SharedMap{
     ConcurrentHashMap<Integer,String> map=new ConcurrentHashMap<>();
-    AtomicInteger key=new AtomicInteger();
-}
+    AtomicInteger key=new AtomicInteger(); // This will provide unique key value, so size is 10,000
+    //HashMap<Integer,String> map=new HashMap<>(); // not thread safe, inccorrect size as output 
+    }
 class UserD extends Thread{
     SharedMap sharedmap;
     public UserD(SharedMap map){
