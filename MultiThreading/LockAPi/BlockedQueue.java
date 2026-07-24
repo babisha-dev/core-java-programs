@@ -12,13 +12,12 @@ class ProducerA extends Thread{
     public void run(){
         for(int i=1;i<=10;i++){
             try{
-             sharedque.que.offer(i);
+             sharedque.que.put(i);
              System.out.println("Produced: "+i+" from "+Thread.currentThread().getName());
             }
             catch(Exception e){}
         }
     }
-
 }
 class ConsumerA extends Thread {
     SharedBlockingQueue sharedque;
@@ -28,10 +27,9 @@ class ConsumerA extends Thread {
     public void run() {
         for(int i=0;i<10;i++){
             try{
-            System.out.println("Consumed  "+sharedque.que.peek()+" "+Thread.currentThread().getName());
+            System.out.println("Consumed:  "+sharedque.que.peek()+" from "+Thread.currentThread().getName());
 
             sharedque.que.poll();
-            System.out.println("Consumed  "+" "+Thread.currentThread().getName());
         }catch(Exception e){}
     }
     }
