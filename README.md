@@ -56,13 +56,13 @@ JAVA
 | Module | Description | Status |
 |---------|-------------|--------|
 |  OOP | Core Object-Oriented Programming concepts |  Completed |
-|  Multithreading | Threads, Synchronization, Locks, Concurrency | In Progress |
-|  Collections Framework | List, Set, Map, Queue |  Planned |
+|  Multithreading | Threads, Synchronization, Locks, Concurrency | Completed |
+|  Collections Framework | List, Set, Map, Queue |  Completed |
 |  Streams API | Functional Programming in Java |  Planned |
-|  Generics | Generic Classes & Methods |  Planned |
-|  File Handling | Reading/Writing Files |  Planned |
+|  Generics | Generic Classes & Methods |  In progress |
+|  File Handling | Reading/Writing Files |  In Progress |
 |  Networking | Socket Programming |  Planned |
-|  JVM | Memory Model, Garbage Collection |  Planned |
+|  JVM | Memory Model, Garbage Collection |  Completed |
 |  Design Patterns | Singleton, Factory, Builder |  Planned |
 
 ---
