@@ -1,5 +1,4 @@
 package MultiThreading.AtomicInteger;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 class TotalViews{
