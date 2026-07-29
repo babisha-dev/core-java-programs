@@ -3,15 +3,17 @@ package ThreadPool;
 import java.util.concurrent.ExecutorService;
 //import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.Callable;
 
 
-class Task implements Runnable{
+class Task implements Callable{
     int id;
     public Task(int id){
         this.id=id;
     }
-  public void run(){
+  public String call(){
        System.out.println("task "+id +" by "+Thread.currentThread().getName());
        if(id==3){
         throw new RuntimeException("Error");
@@ -21,8 +23,11 @@ class Task implements Runnable{
 
        try{
        Thread.sleep(1000);
+       
   }
-catch(Exception e){}}
+catch(Exception e){}
+return "result: "+id;
+}
 }
 public class CreatingThreadPool {
     public static void main(String[] args) {
@@ -33,8 +38,11 @@ public class CreatingThreadPool {
           Future<?> future= executors.submit(new Task(i));
           try{
                   System.out.println(future.get());
-          }catch(Exception e){}
+          }catch(ExecutionException e){
+                   System.out.println(e.getCause());}
+          catch(InterruptedException e){   // if not used throws interruption xception error
 
+                   }
         }
         
        executors.shutdown();
