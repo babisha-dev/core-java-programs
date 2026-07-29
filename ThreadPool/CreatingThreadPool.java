@@ -8,12 +8,12 @@ import java.util.concurrent.Future;
 import java.util.concurrent.Callable;
 
 
-class Task implements Callable{
+class Task implements Callable<String> {
     int id;
     public Task(int id){
         this.id=id;
     }
-  public String call(){
+  public String call() {
        System.out.println("task "+id +" by "+Thread.currentThread().getName());
        if(id==3){
         throw new RuntimeException("Error");
@@ -33,7 +33,7 @@ public class CreatingThreadPool {
     public static void main(String[] args) {
        // Executor executors= Executors.newFixedThreadPool(3);
                 ExecutorService executors= Executors.newFixedThreadPool(3);
-
+           
         for(int i=1;i<=10;i++){
           Future<?> future= executors.submit(new Task(i));
           try{
