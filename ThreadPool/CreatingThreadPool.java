@@ -32,12 +32,13 @@ return "result: "+id;
 public class CreatingThreadPool {
     public static void main(String[] args) {
        // Executor executors= Executors.newFixedThreadPool(3);
-                ExecutorService executors= Executors.newFixedThreadPool(3);
+                ExecutorService executors= Executors.newSingleThreadExecutor();
            
         for(int i=1;i<=10;i++){
           Future<?> future= executors.submit(new Task(i));
           try{
                   System.out.println(future.get());
+                  Thread.sleep(1000);
           }catch(ExecutionException e){
                    System.out.println(e.getCause());}
           catch(InterruptedException e){   // if not used throws interruption xception error
