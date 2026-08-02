@@ -6,7 +6,7 @@
 
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![OOP](https://img.shields.io/badge/OOP-Completed-success)
-![Multithreading](https://img.shields.io/badge/Multithreading-In%20Progress-blue)
+![Multithreading](https://img.shields.io/badge/Multithreading-completed-blue)
 ![Status](https://img.shields.io/badge/Learning-Active-brightgreen)
 
 A structured collection of Java programs covering Core Java concepts, Object-Oriented Programming, Multithreading, and Concurrent Programming through practical implementations.
