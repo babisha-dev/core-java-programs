@@ -145,9 +145,6 @@ JAVA
 - Understand Java Memory Model
 - Write thread-safe applications
 - Learn concurrent programming
-- Prepare for Backend Developer interviews
-- Strengthen problem-solving skills
-
 ---
 
 #  Progress Tracker
