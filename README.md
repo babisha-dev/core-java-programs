@@ -117,13 +117,13 @@ JAVA
 
 ✔ notifyAll()
 
-⬜ Thread Pools
+✔ Thread Pools
 
-⬜ Executor Framework
+✔ Executor Framework
 
-⬜ CompletableFuture
+✔ CompletableFuture
 
-⬜ Concurrent Collections
+✔ Concurrent Collections
 
 ⬜ Fork Join Framework
 
@@ -145,9 +145,6 @@ JAVA
 - Understand Java Memory Model
 - Write thread-safe applications
 - Learn concurrent programming
-- Prepare for Backend Developer interviews
-- Strengthen problem-solving skills
-
 ---
 
 #  Progress Tracker
@@ -161,7 +158,7 @@ JAVA
 - [x] Arrays
 - [x] OOP
 - [x] Exception Handling
-- [ ] Collections Framework
+- [x] Collections Framework
 - [ ] Generics
 - [ ] Streams API
 - [ ] File Handling
@@ -175,9 +172,9 @@ JAVA
 - [x] Race Conditions
 - [x] Lock API
 - [x] Producer Consumer
-- [ ] Executor Framework
-- [ ] Callable & Future
-- [ ] CompletableFuture
+- [x] Executor Framework
+- [x] Callable & Future
+- [x] CompletableFuture
 - [ ] Concurrent Collections
 
 ---
