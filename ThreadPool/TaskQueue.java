@@ -16,7 +16,7 @@ public class TaskQueue {
 
         for(int i=1;i<=10;i++){
             final int taskId=i;
-            executors.submit(()->{
+            executors.execute(()->{
                  String threadName = Thread.currentThread().getName();
                 System.out.println("[" + LocalTime.now().format(formatter) + "] " 
                     + threadName + " STARTED Task " + taskId);
